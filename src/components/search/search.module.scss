@@ -1,0 +1,94 @@
+.header {
+    height: 8rem;
+    border-bottom: 1px solid var(--color-grey-light);
+    padding: 1.6rem 2.1rem;
+
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    height: 100%;
+
+
+    &__form {
+        flex: 0 0 70%;
+        display: flex;
+        align-items: center;
+    }
+
+    &__suggestions {
+        flex: 1;
+    }
+
+    &__icon {
+        width: 2.5rem;
+        height: 2.5rem;
+
+        &Button {
+            border: none;
+            background-color: var(--color-white);
+            padding: 0rem 1rem;
+            border-radius: 100px;
+        }
+    }
+
+    &__input {
+        padding: 1.6rem 1rem;
+        font-family: inherit;
+        color: var(--color-black);
+        font-size: 1.6rem;
+        background-color: var(--color-grey);
+        border: none;
+        width: 100%;
+        font-weight: 500;
+        transition: all 0.3s ease-in-out;
+
+        &:focus {
+            outline: none;
+            background-color: var(--color-white);
+        }
+
+        &::-webkit-input-placeholder {
+            color: var(--color-grey-dark);
+            font-weight: 500;
+        }
+
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        list-style: none;
+    }
+
+    &__link {
+
+        &,
+        &:link,
+        &:visited {
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease-in;
+            color: var(--color-black);
+            border: 1px solid var(--color-grey-light);
+            font-size: 1.4rem;
+            padding: 0.6rem 1.8rem;
+            border-radius: 100px;
+            transition: all 0.3s ease-in;
+            margin-right: 1.4rem;
+        }
+
+        &:hover {
+            background-color: var(--color-grey-light-2);
+        }
+
+        &Active {
+            background-color: #fff0f3;
+            border: 1px solid var(--color-primary) !important;
+        }
+    }
+}

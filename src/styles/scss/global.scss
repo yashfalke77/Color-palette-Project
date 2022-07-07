@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+@import "./variables";
+@import "./mixin";
+
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+
+    @include respond(tab-land) {
+        font-size: 56.25%; // 1rem = 9px
+    }
+
+    @include respond(tab-port) {
+        font-size: 50%; // 1rem = 8px
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%; // 1rem = 12px
+    }
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    box-sizing: border-box;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    overflow-x: hidden;
+}
+
+.Toastify__toast-body {
+    font-family: "Raleway", sans-serif !important;
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 0px !important;
+    width: auto;
+    margin-left: 2.5rem !important;
+}
+
+.Toastify__toast--default {
+    font-weight: 600 !important;
+    font-size: 2rem !important;
+    border-radius: 50px !important;
+}
+
+.Toastify__toast>button>svg {
+    display: none;
+}

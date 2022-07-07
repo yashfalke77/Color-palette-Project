@@ -1,0 +1,53 @@
+.palettes {
+    &__main {
+        padding: 4rem 2rem;
+    }
+
+    &__title {
+        width: 60rem;
+        margin: 0 auto;
+        margin-bottom: 4rem;
+        text-align: center;
+    }
+
+    &__description {
+        font-size: 1.8rem;
+        margin-top: 3rem;
+    }
+
+    &__all {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+        grid-gap: 20px 35px;
+        padding: 4rem;
+    }
+
+    &__headingPrimary {
+        color: var(--color-black);
+        font-weight: 800;
+        font-size: 7rem;
+        text-align: center;
+        line-height: 1;
+        letter-spacing: -0.05em;
+    }
+}
+
+.Toastify__toast-body {
+    font-family: "Raleway", sans-serif !important;
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 0px !important;
+    width: auto;
+    margin-left: 2.5rem !important;
+}
+
+.Toastify__toast--default {
+    font-weight: 600 !important;
+    font-size: 2rem !important;
+    border-radius: 50px !important;
+}
+
+.Toastify__toast>button>svg {
+    display: none;
+}

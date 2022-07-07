@@ -1,0 +1,239 @@
+@keyframes explore {
+    0% {
+        opacity: 0;
+        transform-origin: top right;
+        transform: scale(0);
+    }
+
+    80% {
+        transform-origin: top right;
+        transform: scale(1.02);
+    }
+
+    100% {
+        opacity: 1;
+        transform-origin: top right;
+        scale: (1);
+    }
+
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0rem;
+    background-color: var(--color-white);
+    height: 6rem;
+    padding: 0rem 2rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--color-grey-light);
+    z-index: 3;
+
+    &__left {
+        flex: 0 0 30%;
+        display: flex;
+        align-items: center;
+    }
+
+    &__right {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        &>*:not(:last-child) {
+            margin-right: 1.6rem;
+        }
+    }
+
+    &__link {
+
+        &,
+        &:link,
+        &:visited {
+            text-decoration: none;
+            display: inline-block;
+            color: var(--color-black);
+            border-bottom: 2px solid transparent;
+            align-self: stretch;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            margin-left: 1.6rem;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+            border-bottom: 2px solid var(--color-black);
+        }
+
+        &Active {
+            border-bottom: 2px solid var(--color-black) !important;
+        }
+    }
+
+
+    &__logo {
+
+        &,
+        &:link,
+        &:visited {
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        font-weight: 800;
+        font-size: 2.6rem;
+        margin-right: 1rem;
+        color: var(--color-primary);
+    }
+}
+
+
+
+.explore {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 2rem;
+
+    &__menu {
+        border: none;
+        background-color: var(--color-white);
+        cursor: pointer;
+    }
+
+    &__icon {
+        height: 2rem;
+        width: 2rem;
+        fill: var(--color-black);
+    }
+
+    &__options {
+        position: absolute;
+        top: 3.5rem;
+        right: -2rem;
+        width: 20rem;
+        padding: 1rem 0rem;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--color-white);
+        border: 1px solid var(--color-grey-light);
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        animation: explore 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+
+        &::after {
+            top: -6px;
+            background: var(--color-white)
+        }
+
+        &::after {
+            border-bottom: 1px solid var(--color-grey-light);
+            border-right: 1px solid var(--color-grey-light);
+            border-radius: 0 0 4px 0;
+            margin-left: -5px;
+            right: 2rem;
+            transform: rotate(-135deg);
+            content: '';
+            height: 12px;
+            width: 12px;
+            position: absolute;
+        }
+    }
+
+    &__bottom {
+        border-top: 1px solid var(--color-grey-light);
+        padding: 1rem 0rem 0rem 2.2rem;
+
+        &Icon {
+            height: 2rem;
+            width: 2rem;
+            fill: var(--color-black);
+            margin-right: 1.1rem;
+
+            &:hover {
+                fill: var(--color-primary);
+            }
+        }
+    }
+
+
+    &__links {
+
+        &,
+        &:link,
+        &:visited {
+            text-decoration: none;
+            width: 100%;
+            color: var(--color-black);
+            padding: 0.6rem 2rem;
+            font-size: 1.5rem;
+            transition: all 0.3s ease-in-out;
+        }
+
+
+        &:hover {
+            background-color: var(--color-grey-light-2);
+        }
+    }
+}
+
+.auth {
+    display: flex;
+    align-items: center;
+
+    &__btnOutline,
+    &__btnRound {
+
+        &,
+        &:link,
+        &:visited {
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease-in;
+        }
+    }
+
+    &__btnOutline {
+
+        &,
+        &:link,
+        &:visited {
+            color: var(--color-black);
+            border: 1px solid var(--color-grey-light);
+            font-size: 1.4rem;
+            padding: 0.8rem 1.8rem;
+            border-radius: 100px;
+            transition: all 0.3s ease-in;
+
+            &:hover {
+                background-color: var(--color-grey-light-2);
+            }
+        }
+    }
+
+    &__btnRound {
+
+        &,
+        &:link,
+        &:visited {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            transition: all 0.3s ease-in;
+            font-size: 1.4rem;
+            padding: 0.8rem 1.8rem;
+            border-radius: 100px;
+
+            &:hover {
+                background-color: #800f2f;
+            }
+        }
+
+    }
+
+    &>*:not(:last-child) {
+        margin-right: 1.6rem;
+    }
+}

@@ -1,0 +1,87 @@
+@import "../../styles/scss/mixin";
+
+.footer {
+    background-color: var(--color-grey-light-2);
+    padding: 5rem;
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        border-bottom: 1px solid var(--color-grey-light);
+        padding: 3rem;
+    }
+
+    &__box {
+        list-style: none;
+        margin-bottom: 0rem;
+
+        @include respond(phone) {
+            margin-bottom: 4rem;
+        }
+    }
+
+    &__linkName {
+        margin-bottom: 2.6rem;
+        font-weight: 800;
+        font-size: 2.6rem;
+        line-height: 1;
+    }
+
+    &__linkItems {
+        margin-bottom: 0.5rem;
+    }
+
+    &__links {
+
+        &,
+        &:link,
+        &:visited {
+            text-decoration: none;
+            color: var(--color-black);
+            font-size: 1.8rem;
+            transition: all 0.2s ease-in;
+        }
+
+        &:hover {
+            color: var(--color-primary);
+        }
+    }
+
+    &__bottomDetails {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3rem;
+
+        @include respond(phone) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__copyrightText {
+        color: var(--color-grey-dark);
+
+        &Name {
+            color: var(--color-black) !important;
+        }
+
+        @include respond(phone) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__icon {
+        height: 2.6rem;
+        width: 2.6rem;
+        fill: var(--color-black);
+        margin-right: 1rem;
+        transition: all 0.2s ease-in;
+        cursor: pointer;
+
+        &:hover {
+            fill: var(--color-primary);
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.palette {
+    &__colors {
+        display: flex;
+        border-radius: 10px;
+    }
+
+    &__description {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-right: 1.6rem;
+        cursor: pointer;
+    }
+
+    &__text {
+        color: var(--color-grey-dark);
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            color: var(--color-black);
+        }
+    }
+
+    &__icon {
+        height: 2rem;
+        width: 2rem;
+        fill: var(--color-grey-dark);
+        margin-right: 0.6rem;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            fill: var(--color-black);
+        }
+    }
+}
