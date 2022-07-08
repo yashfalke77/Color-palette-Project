@@ -54,6 +54,7 @@ const Navbar = () => {
                             <Link href="/" >
                                 <a className={styles.explore__links}>About</a>
                             </Link>
+                            <div className={styles.line}></div>
                             <div className={styles.explore__bottom}>
                                 <a href="https://www.instagram.com/yashfalke77/" target="_blank" rel='noreferrer'>
                                     <svg className={styles.explore__bottomIcon}>

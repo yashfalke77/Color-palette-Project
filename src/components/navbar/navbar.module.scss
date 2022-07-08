@@ -28,7 +28,7 @@
     padding: 0rem 2rem;
     font-weight: 600;
     border-bottom: 1px solid var(--color-grey-light);
-    z-index: 3;
+    z-index: 4;
 
     &__left {
         flex: 0 0 30%;
@@ -144,14 +144,16 @@
     }
 
     &__bottom {
-        border-top: 1px solid var(--color-grey-light);
-        padding: 1rem 0rem 0rem 2.2rem;
+        // border-top: 1px solid var(--color-grey-light);
+        padding: 1.4rem 0rem 0rem 2.2rem;
 
         &Icon {
             height: 2rem;
             width: 2rem;
             fill: var(--color-black);
             margin-right: 1.1rem;
+            transition: all 0.3s ease-in-out;
+
 
             &:hover {
                 fill: var(--color-primary);
@@ -236,4 +238,11 @@
     &>*:not(:last-child) {
         margin-right: 1.6rem;
     }
+}
+
+.line {
+    height: 1px;
+    opacity: 0.1;
+    width: 100%;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.00) 0%, #000000 50%, rgba(0, 0, 0, 0.00) 100%);
 }

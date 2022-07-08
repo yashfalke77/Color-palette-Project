@@ -1,25 +1,30 @@
 .header {
     height: 8rem;
     border-bottom: 1px solid var(--color-grey-light);
+    position: sticky;
+    top: 6rem;
+    z-index: 3;
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
     padding: 1.6rem 2.1rem;
 
 }
 
 .search {
-    display: flex;
-    align-items: center;
-    border-radius: 100px;
-    height: 100%;
+    flex: 0 0 76%;
 
 
     &__form {
-        flex: 0 0 70%;
+        width: 100%;
         display: flex;
         align-items: center;
+        margin-right: 1rem;
     }
 
-    &__suggestions {
+    &__suggestion {
         flex: 1;
+        margin-left: 2rem;
     }
 
     &__icon {
@@ -91,4 +96,85 @@
             border: 1px solid var(--color-primary) !important;
         }
     }
+
+    &__options {
+        width: 100%;
+        position: absolute;
+        border-bottom: 1px solid var(--color-grey-light);
+        background-color: var(--color-white);
+        top: 8rem;
+        left: 0;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+        padding: 3rem;
+
+        &Links {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__sectionColor {
+        margin-bottom: 2rem;
+    }
+
+    &__sectionStyles {
+        margin-top: 1.6rem;
+    }
+
+    &__headingTertiary {
+        display: block;
+        font-size: 1.8rem;
+        margin-bottom: 1.6rem;
+    }
+
+    &__colors {
+        &Button {
+            text-decoration: none;
+            transition: all 0.3s ease-in;
+            color: var(--color-black);
+            border: 1px solid var(--color-grey-light);
+            font-size: 1.4rem;
+            padding: 0.6rem 1.8rem;
+            border-radius: 10px;
+            transition: all 0.3s ease-in;
+            margin-right: 1.4rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+
+            &:hover {
+                border: 1px solid var(--color-grey-dark);
+            }
+
+            &Active {
+                background-color: #fff0f3;
+                border: 1px solid var(--color-primary) !important;
+            }
+        }
+
+        &Logo {
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 50%;
+            margin-right: 1rem;
+            box-shadow: inset rgb(0 0 0 / 8%) 0 0 0 1px;
+            cursor: pointer;
+        }
+
+        &Text {
+            text-align: center;
+            display: inline;
+            text-transform: capitalize;
+            cursor: pointer;
+        }
+    }
+
+
+}
+
+.line {
+    height: 1px;
+    opacity: 0.1;
+    width: 100%;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.00) 0%, #000000 50%, rgba(0, 0, 0, 0.00) 100%);
 }

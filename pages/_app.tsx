@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         closeOnClick
         rtl={false}
         draggable
-        limit={1}
+        limit={3}
         className="Hii"
       />
     </>
