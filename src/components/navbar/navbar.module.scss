@@ -76,17 +76,23 @@
 
     &__logo {
 
-        &,
-        &:link,
-        &:visited {
-            text-decoration: none;
-            display: inline-block;
-        }
+        // &,
+        // &:link,
+        // &:visited {
+        //     text-decoration: none;
+        //     display: inline-block;
+        // }
 
-        font-weight: 800;
-        font-size: 2.6rem;
-        margin-right: 1rem;
-        color: var(--color-primary);
+        // font-weight: 800;
+        // font-size: 2.6rem;
+        // margin-right: 1rem;
+        // color: var(--color-primary);
+
+        &Img {
+            width: 14rem;
+            display: flex;
+            align-items: center;
+        }
     }
 }
 
@@ -186,52 +192,45 @@
     display: flex;
     align-items: center;
 
-    &__btnOutline,
-    &__btnRound {
-
-        &,
-        &:link,
-        &:visited {
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease-in;
-        }
-    }
-
     &__btnOutline {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        line-height: 1.7;
+        outline: none;
+        color: var(--color-black);
+        border: 1px solid var(--color-grey-light);
+        font-size: 1.4rem;
+        padding: 0.8rem 1.8rem;
+        border-radius: 100px;
+        transition: all 0.3s ease-in;
+        background-color: var(--color-white);
+        cursor: pointer;
 
-        &,
-        &:link,
-        &:visited {
-            color: var(--color-black);
-            border: 1px solid var(--color-grey-light);
-            font-size: 1.4rem;
-            padding: 0.8rem 1.8rem;
-            border-radius: 100px;
-            transition: all 0.3s ease-in;
-
-            &:hover {
-                background-color: var(--color-grey-light-2);
-            }
+        &:hover {
+            background-color: var(--color-grey-light-2);
         }
+
     }
 
     &__btnRound {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        line-height: 1.7;
 
-        &,
-        &:link,
-        &:visited {
-            background-color: var(--color-primary);
-            color: var(--color-white);
-            transition: all 0.3s ease-in;
-            font-size: 1.4rem;
-            padding: 0.8rem 1.8rem;
-            border-radius: 100px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        transition: all 0.3s ease-in;
+        font-size: 1.4rem;
+        padding: 0.8rem 1.8rem;
+        border-radius: 100px;
 
-            &:hover {
-                background-color: #800f2f;
-            }
+        &:hover {
+            background-color: #800f2f;
         }
+
 
     }
 

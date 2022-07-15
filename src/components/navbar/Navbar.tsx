@@ -2,12 +2,15 @@ import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'src/helpers/NavLink'
 import styles from "./navbar.module.scss"
+import logo from "@public/images/colors-long.png"
+import Intro from '@components/auth-intro/Intro'
 
 
 const Navbar = () => {
 
     const refExplore: any = useRef(null)
     const [exploreOptions, setExploreOptions] = useState(false)
+    const [openPopup, setOpenPopup] = useState(false)
 
     useEffect(() => {
         document.addEventListener("click", (evt) => {
@@ -21,7 +24,10 @@ const Navbar = () => {
         <nav className={styles.nav}>
             <div className={styles.nav__left}>
                 <NavLink href="/">
-                    <a className={styles.nav__logo}>Colorss</a>
+                    {/* <a className={styles.nav__logo}>Colorss</a> */}
+                    <a className={styles.nav__logo}>
+                        <img className={styles.nav__logoImg} src={logo.src} alt="" />
+                    </a>
                 </NavLink>
                 <NavLink href="/palettes" activeClassName={styles.nav__linkActive}>
                     <a className={styles.nav__link}>Discover</a>
@@ -87,13 +93,13 @@ const Navbar = () => {
                 </div>
             </div>
             <div className={styles.auth}>
-                <Link href="/">
-                    <a className={styles.auth__btnOutline}>Log In</a>
-                </Link>
-                <Link href="/">
-                    <a href="/" className={styles.auth__btnRound}>Sign Up</a>
-                </Link>
+
+                <button className={styles.auth__btnOutline} onClick={() => (setOpenPopup(true))}>Log In</button>
+
+                <button className={styles.auth__btnRound} onClick={() => (setOpenPopup(true))}>Sign Up</button>
             </div>
+
+            {openPopup && <Intro setOpenPopup={setOpenPopup} />}
         </nav >
     )
 }

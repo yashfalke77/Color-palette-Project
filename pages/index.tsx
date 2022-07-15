@@ -3,10 +3,20 @@ import Link from "next/link";
 import React from "react";
 import styles from "@styles/index.module.scss"
 import Footer from "@components/footer/Footer";
+import Head from "next/head";
+import logo from "@public/images/colors-short.png"
+import Intro from "@components/auth-intro/Intro";
 
 const Home: React.FC = () => {
   return (
     <div className={styles.home}>
+      <Head>
+        <title>My page title</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="shortcut icon" href={logo.src} type="image/x-icon"></link>
+      </Head>
+
+
       <Navbar />
 
       <main className={styles.main}>

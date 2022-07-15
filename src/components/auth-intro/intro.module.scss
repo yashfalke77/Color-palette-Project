@@ -1,0 +1,160 @@
+@keyframes intro {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba($color: #000, $alpha: 0.4);
+    overflow: hidden;
+}
+
+.section {
+    background-color: var(--color-white);
+    padding: 2.4rem;
+    width: 35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    border-radius: 10px;
+    animation-name: intro;
+    animation-duration: 0.3s;
+
+
+    &__btnClose {
+        background-color: var(--color-white);
+        border: none;
+        outline: none;
+        position: absolute;
+        top: 1rem;
+        cursor: pointer;
+        left: 1rem;
+        transition: all 0.3s ease-in-out;
+
+
+        &:hover {
+            background-color: #f2f2f3;
+        }
+    }
+
+    &__closeIcon {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    &__heading {
+        color: var(--color-black);
+        font-weight: 800;
+        font-size: 3.5rem;
+        text-align: center;
+        line-height: 1;
+        letter-spacing: -0.05em;
+    }
+
+    &__description {
+        color: var(--color-grey-dark);
+        font-size: 1.6rem;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    &__options {
+        display: flex;
+        flex-direction: column;
+        margin: 1.6rem 0rem;
+    }
+
+    &__googleIcon {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.6rem;
+    }
+
+    &__btnNormal,
+    &__btnColor {
+
+        &,
+        &:link,
+        &:visited {
+            text-decoration: none;
+            transition: all 0.3s ease-in;
+            width: 30rem;
+            text-align: center;
+            font-size: 1.6rem;
+            padding: 1rem 3rem;
+            border-radius: 10px;
+            box-shadow: 0 0.5rem 1rem rgba(var(--color-black), $alpha: 0.2);
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                transform: translateY(-0.3rem);
+                box-shadow: 0rem 0.7rem 2rem rgba(var(--color-black), $alpha: 0.2);
+            }
+        }
+    }
+
+    &__btnNormal {
+        color: var(--color-black);
+        background-color: #f2f2f3;
+        transition: all 0.3s ease-in-out;
+        margin-bottom: 1.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            background-color: #ededee;
+        }
+    }
+
+    &__btnColor {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background-color: #800f2f;
+        }
+    }
+
+    &__footer {
+        font-size: 1.2rem;
+        color: var(--color-grey-dark);
+        text-align: center;
+
+        &Highlight {
+
+            &,
+            &:link,
+            &:visited {
+                text-decoration: none;
+                color: var(--color-black);
+                transition: all 0.2s ease-in;
+
+            }
+
+            &:hover {
+                color: var(--color-primary);
+            }
+
+        }
+    }
+}
