@@ -59,7 +59,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "pages/404.tsx"  ],
   "exclude": [
     "node_modules",
     "test/*",

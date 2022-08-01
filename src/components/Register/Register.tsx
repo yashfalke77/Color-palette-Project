@@ -1,13 +1,11 @@
 import Link from 'next/link'
 import React, { Dispatch, SetStateAction, useState } from 'react'
-import styles from "./login.module.scss"
-interface IntroProps {
+import styles from "../login/login.module.scss"
+interface RegisterProps {
     setOpenPopup: Dispatch<SetStateAction<boolean>>,
     setAuth: Dispatch<SetStateAction<string>>
 }
-
-const Login = ({ setOpenPopup, setAuth }: IntroProps) => {
-
+const Register = ({ setOpenPopup, setAuth }: RegisterProps) => {
     const [inputType, setInputType] = useState("password")
 
 
@@ -31,10 +29,11 @@ const Login = ({ setOpenPopup, setAuth }: IntroProps) => {
                             <use href="/icons/symbol-defs.svg#icon-clear"></use>
                         </svg>
                     </button>
-                    <h1 className={styles.section__heading}>Sign In</h1>
-                    <p className={styles.section__description}>Sign in with your email here.</p>
+                    <h1 className={styles.section__heading}>Sign Up</h1>
+                    <p className={styles.section__description}>Create a free account with your email.</p>
                     <div className={styles.section__options}>
                         <form>
+                            <input type="text" placeholder='Full Name' className={styles.section__input} />
                             <input type="text" placeholder='Email' className={styles.section__input} />
                             <div className={styles.section__password}>
                                 <input type={inputType} placeholder='Password' className={styles.section__input} />
@@ -60,14 +59,9 @@ const Login = ({ setOpenPopup, setAuth }: IntroProps) => {
                         </div>
                         <div className={styles.line}></div>
                         <div className={styles.section__loginOptions}>
-                            <p>Forgot password? &nbsp;
+                            <p>Have an Account? &nbsp;
                                 <Link href="/">
-                                    <a className={styles.section__link}>Reset</a>
-                                </Link>
-                            </p>
-                            <p>Dont have an Account? &nbsp;
-                                <Link href="/">
-                                    <a className={styles.section__link}>Sign Up</a>
+                                    <a className={styles.section__link}>Sign In</a>
                                 </Link>
                             </p>
                         </div>
@@ -78,4 +72,4 @@ const Login = ({ setOpenPopup, setAuth }: IntroProps) => {
     )
 }
 
-export default Login
+export default Register

@@ -4,13 +4,18 @@ import { NavLink } from 'src/helpers/NavLink'
 import styles from "./navbar.module.scss"
 import logo from "@public/images/colors-long.png"
 import Intro from '@components/auth-intro/Intro'
+import Login from '@components/login/Login'
+import Register from '@components/Register/Register'
 
 
 const Navbar = () => {
 
     const refExplore: any = useRef(null)
     const [exploreOptions, setExploreOptions] = useState(false)
-    const [openPopup, setOpenPopup] = useState(false)
+    const [openIntroPopup, setOpenIntroPopup] = useState(false)
+    const [openLoginPopup, setOpenLoginPopup] = useState(false)
+    const [openRegisterPopup, setOpenRegisterPopup] = useState(false)
+    const [auth, setAuth] = useState("")
 
     useEffect(() => {
         document.addEventListener("click", (evt) => {
@@ -19,6 +24,15 @@ const Navbar = () => {
             }
         })
     }, [])
+
+    const handleSignIn = () => {
+        setOpenIntroPopup(true)
+        setAuth("in")
+    }
+    const handleSignUp = () => {
+        setOpenIntroPopup(true)
+        setAuth("up")
+    }
 
     return (
         <nav className={styles.nav}>
@@ -57,7 +71,7 @@ const Navbar = () => {
                             <Link href="/" >
                                 <a className={styles.explore__links}>Become a Contributor</a>
                             </Link>
-                            <Link href="/" >
+                            <Link href="/about" >
                                 <a className={styles.explore__links}>About</a>
                             </Link>
                             <div className={styles.line}></div>
@@ -94,14 +108,15 @@ const Navbar = () => {
             </div>
             <div className={styles.auth}>
 
-                <button className={styles.auth__btnOutline} onClick={() => (setOpenPopup(true))}>Log In</button>
+                <button className={styles.auth__btnOutline} onClick={handleSignIn}>Log In</button>
 
-                <button className={styles.auth__btnRound} onClick={() => (setOpenPopup(true))}>Sign Up</button>
+                <button className={styles.auth__btnRound} onClick={handleSignUp}>Sign Up</button>
             </div>
 
-            {openPopup && <Intro setOpenPopup={setOpenPopup} />}
+            {openIntroPopup && <Intro setOpenPopup={setOpenIntroPopup} setOpenLoginPopup={setOpenLoginPopup} setAuth={setAuth} auth={auth} setOpenRegisterPopup={setOpenRegisterPopup} />}
+            {(openLoginPopup && auth === "in") && <Login setAuth={setAuth} setOpenPopup={setOpenLoginPopup} />}
+            {(openRegisterPopup && auth === "up") && <Register setAuth={setAuth} setOpenPopup={setOpenRegisterPopup} />}
         </nav >
     )
 }
-
 export default Navbar

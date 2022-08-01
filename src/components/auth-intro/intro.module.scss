@@ -11,7 +11,7 @@
 }
 
 
-.login {
+.auth {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,8 +88,7 @@
         margin-right: 0.6rem;
     }
 
-    &__btnNormal,
-    &__btnColor {
+    &__btnNormal {
 
         &,
         &:link,
@@ -126,11 +125,26 @@
     }
 
     &__btnColor {
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.6rem;
+        font-weight: 600;
+        line-height: 1.7;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        width: 30rem;
+        text-align: center;
+        padding: 1rem 3rem;
+        border-radius: 10px;
+        box-shadow: 0 0.5rem 1rem rgba(var(--color-black), $alpha: 0.2);
+        transition: all 0.3s ease-in-out;
         background-color: var(--color-primary);
         color: var(--color-white);
         transition: all 0.3s ease-in-out;
 
         &:hover {
+            transform: translateY(-0.3rem);
+            box-shadow: 0rem 0.7rem 2rem rgba(var(--color-black), $alpha: 0.2);
             background-color: #800f2f;
         }
     }

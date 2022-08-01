@@ -1,0 +1,21 @@
+.error {
+    height: 100vh;
+    padding: 5rem;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    // &__img {
+    //     width: 90rem;
+    // }
+
+    &__heading {
+        font-weight: 600;
+        margin-left: 46rem;
+        color: var(--color-grey-dark);
+    }
+}
