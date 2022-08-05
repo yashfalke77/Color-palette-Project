@@ -6,35 +6,14 @@ import About from "@public/images/about.png"
 import About1 from "@public/images/about1.jpg"
 import Link from 'next/link'
 import Footer from '@components/footer/Footer'
+import Navbar from '@components/navbar/Navbar'
 
 
 const about = () => {
     return (
         <div className={styles.about}>
-            <nav className={styles.nav}>
-                <div className={styles.nav__left}>
-                    <NavLink href="/">
-                        <a className={styles.nav__logo}>
-                            <img className={styles.nav__logoImg} src={logo.src} alt="" />
-                        </a>
-                    </NavLink>
-                    <NavLink href="/palettes" activeClassName={styles.nav__linkActive}>
-                        <a className={styles.nav__link}>Discover</a>
-                    </NavLink>
-                    <NavLink href="/pro" activeClassName={styles.nav__linkActive} >
-                        <a className={styles.nav__link}>Go Pro</a>
-                    </NavLink>
-                </div>
-                <div className={styles.nav__right}>
-                    <div className={styles.auth}>
 
-                        <button className={styles.auth__btnOutline}>Log In</button>
-
-                        <button className={styles.auth__btnRound}>Sign Up</button>
-                    </div>
-                </div>
-            </nav >
-
+            < Navbar />
 
             <main className={styles.about__body}>
                 <section className={styles.about__section1}>

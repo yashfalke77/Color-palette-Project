@@ -197,6 +197,14 @@
             text-decoration: none;
             display: inline-block;
             color: var(--color-primary);
+            background-color: var(--color-white);
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.4rem;
+            cursor: pointer;
+            font-weight: 600;
+            line-height: 1.7;
+            border: none;
+            outline: none;
         }
     }
 }

@@ -1,14 +1,16 @@
 import Link from 'next/link'
 import React, { Dispatch, SetStateAction, useState } from 'react'
 import styles from "./login.module.scss"
-interface IntroProps {
-    setOpenPopup: Dispatch<SetStateAction<boolean>>,
+import { useDispatch } from 'react-redux'
+import { loginOpened, registerOpened } from '@redux/slices/authPopup'
+interface LoginProps {
     setAuth: Dispatch<SetStateAction<string>>
 }
 
-const Login = ({ setOpenPopup, setAuth }: IntroProps) => {
+const Login = ({ setAuth }: LoginProps) => {
 
     const [inputType, setInputType] = useState("password")
+    const dispatch = useDispatch()
 
 
     const handleShowHide = (evt: React.MouseEvent<HTMLButtonElement>) => {
@@ -18,8 +20,13 @@ const Login = ({ setOpenPopup, setAuth }: IntroProps) => {
     }
 
     const handleClose = () => {
-        setOpenPopup(false)
+        dispatch(loginOpened({ open: false }))
         setAuth("")
+    }
+
+    const handleRegister = () => {
+        dispatch(loginOpened({ open: false }))
+        dispatch(registerOpened({ open: true }))
     }
 
     return (
@@ -66,9 +73,9 @@ const Login = ({ setOpenPopup, setAuth }: IntroProps) => {
                                 </Link>
                             </p>
                             <p>Dont have an Account? &nbsp;
-                                <Link href="/">
-                                    <a className={styles.section__link}>Sign Up</a>
-                                </Link>
+                                <button className={styles.section__link} onClick={handleRegister}>
+                                    Sign Up
+                                </button>
                             </p>
                         </div>
                     </footer>

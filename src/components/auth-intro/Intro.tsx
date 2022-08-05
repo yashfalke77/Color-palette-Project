@@ -1,33 +1,32 @@
-import Login from '@components/login/Login'
 import Link from 'next/link'
-import React, { Dispatch, SetStateAction, useState } from 'react'
+import React from 'react'
 import styles from "./intro.module.scss"
+import { generalOpened, loginOpened, registerOpened } from '@redux/slices/authPopup'
+import { useDispatch } from 'react-redux'
+
+
 interface IntroProps {
-    setOpenPopup: Dispatch<SetStateAction<boolean>>,
-    setOpenLoginPopup: Dispatch<SetStateAction<boolean>>,
-    setOpenRegisterPopup: Dispatch<SetStateAction<boolean>>,
-    setAuth: Dispatch<SetStateAction<string>>,
-    auth: string,
+    auth: string
 }
 
-const Intro = ({ setOpenPopup, setOpenLoginPopup, setAuth, setOpenRegisterPopup, auth }: IntroProps) => {
+
+const Intro = ({ auth }: IntroProps) => {
+
+    const dispatch = useDispatch()
 
 
 
     const handleClick = () => {
-        setOpenPopup(false)
-        console.log(auth)
+        dispatch(generalOpened({ open: false }))
         if (auth === "in") {
-            setOpenLoginPopup(true)
-        } else if (auth === "up") {
-            console.log("hw")
-            setOpenRegisterPopup(true)
+            dispatch(loginOpened({ open: true }))
+        } else if (auth == "up") {
+            dispatch(registerOpened({ open: true }))
         }
     }
 
     const handleClose = () => {
-        setOpenPopup(false)
-        setAuth("")
+        dispatch(generalOpened({ open: false }))
     }
 
     return (

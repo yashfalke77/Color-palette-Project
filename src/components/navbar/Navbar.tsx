@@ -6,16 +6,24 @@ import logo from "@public/images/colors-long.png"
 import Intro from '@components/auth-intro/Intro'
 import Login from '@components/login/Login'
 import Register from '@components/Register/Register'
+import { generalOpened } from '@redux/slices/authPopup'
+import { useSelector, RootStateOrAny, useDispatch } from 'react-redux'
+
 
 
 const Navbar = () => {
 
     const refExplore: any = useRef(null)
+    const dispatch = useDispatch()
+
+
     const [exploreOptions, setExploreOptions] = useState(false)
-    const [openIntroPopup, setOpenIntroPopup] = useState(false)
-    const [openLoginPopup, setOpenLoginPopup] = useState(false)
-    const [openRegisterPopup, setOpenRegisterPopup] = useState(false)
     const [auth, setAuth] = useState("")
+
+
+    const general = useSelector((state: RootStateOrAny) => state.auth.authPopup.general)
+    const login = useSelector((state: RootStateOrAny) => state.auth.authPopup.login)
+    const register = useSelector((state: RootStateOrAny) => state.auth.authPopup.register)
 
     useEffect(() => {
         document.addEventListener("click", (evt) => {
@@ -26,11 +34,11 @@ const Navbar = () => {
     }, [])
 
     const handleSignIn = () => {
-        setOpenIntroPopup(true)
+        dispatch(generalOpened({ open: true }))
         setAuth("in")
     }
     const handleSignUp = () => {
-        setOpenIntroPopup(true)
+        dispatch(generalOpened({ open: true }))
         setAuth("up")
     }
 
@@ -113,9 +121,9 @@ const Navbar = () => {
                 <button className={styles.auth__btnRound} onClick={handleSignUp}>Sign Up</button>
             </div>
 
-            {openIntroPopup && <Intro setOpenPopup={setOpenIntroPopup} setOpenLoginPopup={setOpenLoginPopup} setAuth={setAuth} auth={auth} setOpenRegisterPopup={setOpenRegisterPopup} />}
-            {(openLoginPopup && auth === "in") && <Login setAuth={setAuth} setOpenPopup={setOpenLoginPopup} />}
-            {(openRegisterPopup && auth === "up") && <Register setAuth={setAuth} setOpenPopup={setOpenRegisterPopup} />}
+            {general && <Intro auth={auth} />}
+            {login && <Login setAuth={setAuth} />}
+            {register && <Register setAuth={setAuth} />}
         </nav >
     )
 }

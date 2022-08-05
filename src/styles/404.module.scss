@@ -1,199 +1,25 @@
-@keyframes explore {
-    0% {
-        opacity: 0;
-        transform-origin: top right;
-        transform: scale(0);
-    }
-
-    80% {
-        transform-origin: top right;
-        transform: scale(1.02);
-    }
-
-    100% {
-        opacity: 1;
-        transform-origin: top right;
-        scale: (1);
-    }
-
-}
-
-.body {
-    padding: 2rem 4rem;
-}
-
-.nav {
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--color-white);
-    height: 6rem;
-    // padding: 5rem;
-    font-weight: 600;
-    z-index: 4;
-
-    &__left {
-        flex: 0 0 30%;
-        display: flex;
-        align-items: center;
-    }
-
-    &__right {
-        flex: 1;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-
-        &>*:not(:last-child) {
-            margin-right: 1.6rem;
-        }
-    }
-
-    &__link {
-
-        &,
-        &:link,
-        &:visited {
-            text-decoration: none;
-            display: inline-block;
-            color: var(--color-black);
-            border-bottom: 2px solid transparent;
-            align-self: stretch;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            margin-left: 1.6rem;
-            transition: all 0.3s ease-in-out;
-        }
-    }
-
-
-    &__logo {
-
-        // &,
-        // &:link,
-        // &:visited {
-        //     text-decoration: none;
-        //     display: inline-block;
-        // }
-
-        // font-weight: 800;
-        // font-size: 2.6rem;
-        // margin-right: 1rem;
-        // color: var(--color-primary);
-
-        &Img {
-            width: 14rem;
-            display: flex;
-            align-items: center;
-        }
-    }
-}
-
-
-
-.auth {
-    display: flex;
-    align-items: center;
-
-    &__btnOutline {
-        font-family: 'Raleway', sans-serif;
-        font-weight: 600;
-        line-height: 1.7;
-        outline: none;
-        color: var(--color-black);
-        border: 1px solid var(--color-grey-light);
-        font-size: 1.4rem;
-        padding: 0.8rem 1.8rem;
-        border-radius: 100px;
-        transition: all 0.3s ease-in;
-        background-color: var(--color-white);
-        cursor: pointer;
-
-        &:hover {
-            background-color: var(--color-grey-light-2);
-        }
-
-    }
-
-    &__btnRound {
-        font-family: 'Raleway', sans-serif;
-        font-weight: 600;
-        line-height: 1.7;
-
-        cursor: pointer;
-        border: none;
-        outline: none;
-        background-color: var(--color-primary);
-        color: var(--color-white);
-        transition: all 0.3s ease-in;
-        font-size: 1.4rem;
-        padding: 0.8rem 1.8rem;
-        border-radius: 100px;
-
-        &:hover {
-            background-color: #800f2f;
-        }
-
-
-    }
-
-    &>*:not(:last-child) {
-        margin-right: 1.6rem;
-    }
-}
-
-
 // --------------------------------- 404 page -------------------------------------------------
 
 .error {
-    background-color: var(--color-white);
-    display: flex;
-    height: 50rem;
-
-    &__left {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    &__right {
-        flex: 0 0 50%;
-        background-image: url("../../public/images/4041.png");
-        background-size: cover;
-        background-position: center;
-    }
-
-    &__img {
-        width: 40rem;
-    }
+    padding: 8rem;
 
     &__heading {
         color: var(--color-black);
-        font-weight: 600;
-        font-size: 15rem;
+        font-weight: 800;
+        font-size: 6rem;
         text-align: center;
-        line-height: 1;
-        letter-spacing: -0.05em;
-        margin-bottom: 1.6rem;
+        line-height: 1.1em;
+        letter-spacing: -0.045em;
+        margin-bottom: 3rem;
     }
 
     &__subheading {
-        color: var(--color-black);
         font-weight: 600;
-        font-size: 6rem;
         text-align: center;
         line-height: 1;
         letter-spacing: -0.05em;
-
-        &Imp {
-            color: var(--color-primary) !important;
-            text-transform: uppercase;
-        }
-    }
-
-    &__svg {
-        height: 20rem;
+        color: #7d7c83;
+        line-height: 1.7em;
+        font-size: 20px;
     }
 }

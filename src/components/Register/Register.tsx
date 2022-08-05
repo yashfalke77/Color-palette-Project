@@ -1,23 +1,32 @@
+import { registerOpened, loginOpened } from '@redux/slices/authPopup'
 import Link from 'next/link'
 import React, { Dispatch, SetStateAction, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import styles from "../login/login.module.scss"
+
 interface RegisterProps {
-    setOpenPopup: Dispatch<SetStateAction<boolean>>,
     setAuth: Dispatch<SetStateAction<string>>
 }
-const Register = ({ setOpenPopup, setAuth }: RegisterProps) => {
+
+
+const Register = ({ setAuth }: RegisterProps) => {
     const [inputType, setInputType] = useState("password")
+    const dispatch = useDispatch()
 
 
     const handleShowHide = (evt: React.MouseEvent<HTMLButtonElement>) => {
         evt.preventDefault()
         inputType === "password" ? setInputType("text") : setInputType("password")
-        console.log(inputType)
     }
 
     const handleClose = () => {
-        setOpenPopup(false)
+        dispatch(registerOpened({ open: false }))
         setAuth("")
+    }
+
+    const handleLogin = () => {
+        dispatch(registerOpened({ open: false }))
+        dispatch(loginOpened({ open: true }))
     }
 
     return (
@@ -60,9 +69,9 @@ const Register = ({ setOpenPopup, setAuth }: RegisterProps) => {
                         <div className={styles.line}></div>
                         <div className={styles.section__loginOptions}>
                             <p>Have an Account? &nbsp;
-                                <Link href="/">
-                                    <a className={styles.section__link}>Sign In</a>
-                                </Link>
+                                <button onClick={handleLogin} className={styles.section__link}>
+                                    Sign In
+                                </button>
                             </p>
                         </div>
                     </footer>
