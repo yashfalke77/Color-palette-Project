@@ -3,16 +3,39 @@ import Link from 'next/link'
 import React, { Dispatch, SetStateAction, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import styles from "../login/login.module.scss"
+import { useForm, SubmitHandler } from "react-hook-form"
+import { yupResolver } from "@hookform/resolvers/yup"
+import * as Yup from "yup"
 
 interface RegisterProps {
     setAuth: Dispatch<SetStateAction<string>>
 }
+
+interface RegisterSchema {
+    fullName: string;
+    email: string;
+    password: string;
+}
+
+
+const registerSchema: Yup.SchemaOf<RegisterSchema> = Yup.object().shape({
+    fullName: Yup.string().min(5).max(128).required(),
+    email: Yup.string().email().required(),
+    password: Yup.string().min(8).max(100).matches(/^[a-z0-9]+$/i, "Password should contain alphabets and numbers only").required()
+})
 
 
 const Register = ({ setAuth }: RegisterProps) => {
     const [inputType, setInputType] = useState("password")
     const dispatch = useDispatch()
 
+    const { register, handleSubmit, formState: { errors } } = useForm<RegisterSchema>({
+        resolver: yupResolver<Yup.AnyObjectSchema>(registerSchema)
+    })
+
+    const submitForm: SubmitHandler<RegisterSchema> = (data) => {
+        console.log(data)
+    }
 
     const handleShowHide = (evt: React.MouseEvent<HTMLButtonElement>) => {
         evt.preventDefault()
@@ -41,16 +64,23 @@ const Register = ({ setAuth }: RegisterProps) => {
                     <h1 className={styles.section__heading}>Sign Up</h1>
                     <p className={styles.section__description}>Create a free account with your email.</p>
                     <div className={styles.section__options}>
-                        <form>
-                            <input type="text" placeholder='Full Name' className={styles.section__input} />
-                            <input type="text" placeholder='Email' className={styles.section__input} />
+                        <form onSubmit={handleSubmit(submitForm)}>
+                            <div className={styles.section__name}>
+                                <input type="text" placeholder='Full Name' {...register("fullName")} className={styles.section__input} />
+                                <p className={styles.section__errors}>{errors.fullName?.message}</p>
+                            </div>
+                            <div className={styles.section__email}>
+                                <input type="email" placeholder='Email' {...register("email")} className={styles.section__input} />
+                                <p className={styles.section__errors}>{errors.email?.message}</p>
+                            </div>
                             <div className={styles.section__password}>
-                                <input type={inputType} placeholder='Password' className={styles.section__input} />
+                                <input type={inputType} placeholder='Password' {...register("password")} className={styles.section__input} />
                                 <button type='button' onClick={handleShowHide} className={styles.section__passwordButton}>
                                     <svg className={styles.section__passwordButtonIcon}>
                                         <use href={`/icons/symbol-defs.svg#icon-${inputType === "password" ? "visibility_off" : "remove_red_eye"}`}></use>
                                     </svg>
                                 </button>
+                                <p className={styles.section__errors}>{errors.password?.message}</p>
                             </div>
                             <button type='submit' className={styles.section__btnColor}>Sign In</button>
                         </form>

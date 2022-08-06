@@ -94,7 +94,6 @@
         width: 100%;
         display: block;
         transition: all 0.3s ease-in-out;
-        margin-bottom: 1.4rem;
 
         &::-webkit-input-placeholder {
             color: var(--color-grey-dark);
@@ -110,8 +109,21 @@
         }
     }
 
+    &__errors {
+        font-size: 1.1rem;
+        margin-top: 0.6rem;
+        padding-left: 0.6rem;
+        color: #f14d73;
+    }
+
+    &__email,
+    &__name {
+        margin-bottom: 1.4rem;
+    }
+
     &__password {
         position: relative;
+        margin-bottom: 1.4rem;
 
         &Button {
             border: none;
@@ -174,7 +186,6 @@
                 text-decoration: none;
                 color: var(--color-black);
                 transition: all 0.2s ease-in;
-
             }
 
             &:hover {
