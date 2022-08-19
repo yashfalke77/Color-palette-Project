@@ -84,4 +84,36 @@
             fill: var(--color-primary);
         }
     }
+
+    &__badge {
+        font-size: 1.4rem;
+        font-weight: 700;
+        padding: 0.2rem 0.6rem;
+        margin-left: 1rem;
+
+        &--1 {
+            color: #daab00;
+            background-color: #fdf3ce;
+        }
+
+        &--2 {
+            color: #802fde;
+            background-color: #e8e2f7;
+        }
+
+        &--3 {
+            background-color: #d5f8ef;
+            color: #14b789;
+        }
+
+        &--4 {
+            background-color: #ffe5f4;
+            color: #e71591;
+        }
+
+        &--5 {
+            background-color: #d8f6ff;
+            color: #00aee5;
+        }
+    }
 }

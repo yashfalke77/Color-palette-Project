@@ -30,7 +30,7 @@ const ColorBox = ({ background, name }: ColorBoxProps) => {
 
     return (
         <CopyToClipboard text={background} onCopy={changeCopyState}>
-            <div className={styles.colorBox} style={{ backgroundColor: background }}>
+            <div className={styles.colorBox} style={{ backgroundColor: `#${background}` }}>
                 <span className={`${styles["colorBox__text"]} ${styles[`${copied && "colorBox__text--hide"}`]}`}>
                     {background}
                 </span>

@@ -37,6 +37,10 @@ const Home: React.FC = () => {
         </div>
       </main>
 
+      {/* <section className={styles.section}>
+
+      </section> */}
+
       <section className={styles.product}>
         <div className={styles.product__title}>
           <h2 className={styles.product__headingPrimary}>Our Services</h2>

@@ -1,0 +1,80 @@
+@keyframes icon-animation {
+    0% {
+        opacity: 0;
+        width: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+        width: 1;
+    }
+
+    100% {
+        opacity: 1;
+        width: 2rem;
+    }
+}
+
+.colorBox {
+    width: 25.3rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.1s ease-in-out;
+    position: relative;
+
+    &:hover &__text {
+        display: block;
+        // width: 25.3rem;
+        text-align: center;
+    }
+
+    &__text {
+        display: none;
+        font-size: 1.4rem;
+        transition: all 0.3s ease-in-out;
+
+        &--hide {
+            display: none !important;
+        }
+    }
+
+    &__textBottom {
+        font-size: 2rem;
+        padding: 2rem;
+        text-transform: uppercase;
+        position: absolute;
+        bottom: 0;
+    }
+
+    &__icon {
+        fill: var(--color-black);
+        height: 3rem;
+        width: 3rem;
+        display: none;
+
+        &--show {
+            display: block;
+            animation-name: icon-animation;
+            animation-duration: 0.1s;
+            animation-timing-function: ease-in-out;
+        }
+    }
+
+    &:first-child {
+        border-top-left-radius: 10px;
+    }
+
+    &:last-child {
+        border-bottom-right-radius: 10px;
+    }
+
+    &:nth-child(5) {
+        border-top-right-radius: 10px;
+    }
+
+    &:nth-child(6) {
+        border-bottom-left-radius: 10px;
+    }
+}

@@ -22,6 +22,7 @@ const Footer = () => {
                         <Link href="/" >
                             <a className={styles.footer__links}>Contrast Checker</a>
                         </Link>
+                        <span className={`${styles.footer__badge} ${styles["footer__badge--2"]}`}>soon</span>
                     </li>
                     <li className={styles.footer__linkItems}>
                         <Link href="/" >
@@ -40,6 +41,8 @@ const Footer = () => {
                         <Link href="/" >
                             <a className={styles.footer__links}>Create a gradient</a>
                         </Link>
+                        <span className={`${styles.footer__badge} ${styles["footer__badge--1"]}`}>soon</span>
+
                     </li>
                     <li className={styles.footer__linkItems}>
                         <Link href="/" >
@@ -50,11 +53,14 @@ const Footer = () => {
                         <Link href="/" >
                             <a className={styles.footer__links}>Android App</a>
                         </Link>
+                        <span className={`${styles.footer__badge} ${styles["footer__badge--3"]}`}>soon</span>
+
                     </li>
                     <li className={styles.footer__linkItems}>
                         <Link href="/">
                             <a className={styles.footer__links}>Figma Plugin</a>
                         </Link>
+                        <span className={`${styles.footer__badge} ${styles["footer__badge--5"]}`}>soon</span>
                     </li>
                 </ul>
                 <ul className={styles.footer__box}>
@@ -73,6 +79,8 @@ const Footer = () => {
                         <Link href="/" >
                             <a className={styles.footer__links}>Give us a coffee</a>
                         </Link>
+                        <span className={`${styles.footer__badge} ${styles["footer__badge--4"]}`}>soon</span>
+
                     </li>
                 </ul>
                 <ul className={styles.footer__box}>

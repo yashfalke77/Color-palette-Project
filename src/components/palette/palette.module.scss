@@ -1,4 +1,6 @@
 .palette {
+    position: relative;
+
     &__colors {
         display: flex;
         border-radius: 10px;
@@ -12,6 +14,12 @@
         cursor: pointer;
     }
 
+    &__like {
+        margin-right: 2rem;
+        display: flex;
+        align-items: center;
+    }
+
     &__text {
         color: var(--color-grey-dark);
         transition: all 0.2s ease-in-out;
@@ -19,6 +27,14 @@
         &:hover {
             color: var(--color-black);
         }
+    }
+
+    &__menu {
+        background-color: var(--color-white);
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin-top: 0.7rem;
     }
 
     &__icon {
@@ -30,6 +46,96 @@
 
         &:hover {
             fill: var(--color-black);
+        }
+
+        &Heart {
+            fill: var(--color-grey-dark);
+            height: 2rem;
+            width: 2rem;
+            margin-right: 0.6rem;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                fill: #FF0096 !important;
+            }
+        }
+    }
+
+    &__options {
+        position: absolute;
+        top: 15.6rem;
+        right: 0.6rem;
+        width: 22rem;
+        z-index: 2;
+        padding: 0.8rem;
+        background-color: var(--color-white);
+        border: 1px solid rgba(0, 0, 0, 0.075);
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border-radius: 20px;
+
+        &::after {
+            top: -6px;
+            background: var(--color-white)
+        }
+
+        &::after {
+            border-bottom: 1px solid var(--color-grey-light);
+            border-right: 1px solid var(--color-grey-light);
+            border-radius: 0 0 4px 0;
+            margin-left: -5px;
+            right: 2rem;
+            transform: rotate(-135deg);
+            content: '';
+            height: 12px;
+            width: 12px;
+            position: absolute;
+        }
+
+        &Icon {
+            fill: var(--color-black);
+            height: 2rem;
+            width: 2rem;
+            margin-right: 0.6rem;
+            transition: all 0.2s ease-in-out;
+        }
+
+    }
+
+    &__divider {
+        margin: 1rem 0rem;
+        background: rgba(0, 0, 0, 0.075);
+        display: block;
+        position: relative;
+        height: 1px;
+    }
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+
+
+        &:hover {
+            background-color: var(--color-grey-light-2);
+        }
+
+        padding: 0.8rem 1.6rem 0.8rem 1.2rem;
+        color: black;
+        font-size: 14px;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+
+        &,
+        &:link,
+        &:visited {
+            text-decoration: none;
+            color: var(--color-black);
+            font-size: 1.4rem;
+            transition: all 0.3s ease-in-out;
         }
     }
 }
