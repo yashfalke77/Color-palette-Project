@@ -9,9 +9,13 @@
     &__description {
         display: flex;
         align-items: center;
-        justify-content: flex-end;
-        margin-right: 1.6rem;
+        justify-content: space-between;
+        margin: 0rem 1.6rem;
         cursor: pointer;
+    }
+
+    &__right {
+        display: flex;
     }
 
     &__like {

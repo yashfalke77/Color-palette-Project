@@ -38,6 +38,14 @@
         &--hide {
             display: none !important;
         }
+
+        &--light {
+            color: var(--color-white) !important;
+        }
+
+        &--dark {
+            color: var(--color-black) !important;
+        }
     }
 
     &__textBottom {
@@ -46,6 +54,14 @@
         text-transform: uppercase;
         position: absolute;
         bottom: 0;
+
+        &--light {
+            color: var(--color-white) !important;
+        }
+
+        &--dark {
+            color: var(--color-black) !important;
+        }
     }
 
     &__icon {
@@ -59,6 +75,14 @@
             animation-name: icon-animation;
             animation-duration: 0.1s;
             animation-timing-function: ease-in-out;
+        }
+
+        &--light {
+            fill: var(--color-white) !important;
+        }
+
+        &--dark {
+            fill: var(--color-black) !important;
         }
     }
 

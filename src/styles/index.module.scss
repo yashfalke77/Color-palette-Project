@@ -206,7 +206,8 @@
         cursor: pointer;
         margin-right: 1.6rem;
         margin-bottom: 3rem;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border: 1px solid rgba(199, 194, 194, 0.075);
+        // box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         transition: all 0.2s ease-in;
 
         @include respond(phone) {
