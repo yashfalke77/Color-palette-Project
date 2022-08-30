@@ -3,9 +3,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'src/helpers/NavLink'
 import styles from "./navbar.module.scss"
 import logo from "@public/images/colors-long.png"
-import Intro from '@components/auth-intro/Intro'
-import Login from '@components/login/Login'
-import Register from '@components/Register/Register'
+import Intro from '@components/auth/Intro'
+import Login from '@components/auth/Login'
+import Register from '@components/auth/Register'
 import { generalOpened } from '@redux/slices/authPopup'
 import { useSelector, RootStateOrAny, useDispatch } from 'react-redux'
 
@@ -54,8 +54,8 @@ const Navbar = () => {
                 <NavLink href="/palettes" activeClassName={styles.nav__linkActive}>
                     <a className={styles.nav__link}>Discover</a>
                 </NavLink>
-                <NavLink href="/pro" activeClassName={styles.nav__linkActive} >
-                    <a className={styles.nav__link}>Go Pro</a>
+                <NavLink href="/palettes/new" activeClassName={styles.nav__linkActive} >
+                    <a className={styles.nav__link}>Create New</a>
                 </NavLink>
             </div>
             <div className={styles.nav__right}>

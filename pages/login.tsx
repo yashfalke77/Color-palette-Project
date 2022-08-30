@@ -1,6 +1,6 @@
-import Intro from '@components/auth-intro/Intro'
-import Login from '@components/login/Login'
-import Register from '@components/Register/Register'
+import Intro from '@components/auth/Intro'
+import Login from '@components/auth/Login'
+import Register from '@components/auth/Register'
 import React from 'react'
 
 const login = () => {

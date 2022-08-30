@@ -57,3 +57,10 @@ body {
 .Toastify__toast>button>svg {
     display: none;
 }
+
+.Toastify__toast--success {
+    border-radius: 50px !important;
+    background: #007200 !important;
+    color: #fff;
+    fill: #fff;
+}

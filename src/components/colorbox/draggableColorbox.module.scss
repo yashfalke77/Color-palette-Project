@@ -1,0 +1,35 @@
+@keyframes icon-animation {
+    0% {
+        opacity: 0;
+        width: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+        width: 1;
+    }
+
+    100% {
+        opacity: 1;
+        width: 2rem;
+    }
+}
+
+.dragColorBox {
+    // flex-grow: 1;
+    // flex-basis: 0;
+    height: 30rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: flex-basis 0.1s ease-in-out;
+
+    &:hover &__text {
+        display: inline-block;
+    }
+
+    //     &:hover {
+    //         flex-basis: 8rem;
+    //     }
+}

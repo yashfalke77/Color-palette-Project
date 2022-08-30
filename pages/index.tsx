@@ -5,7 +5,7 @@ import styles from "@styles/index.module.scss"
 import Footer from "@components/footer/Footer";
 import Head from "next/head";
 import logo from "@public/images/colors-short.png"
-import Intro from "@components/auth-intro/Intro";
+import Intro from "@components/auth/Intro";
 
 const Home: React.FC = () => {
   return (

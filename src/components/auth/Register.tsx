@@ -2,7 +2,7 @@ import { registerOpened, loginOpened } from '@redux/slices/authPopup'
 import Link from 'next/link'
 import React, { Dispatch, SetStateAction, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import styles from "../login/login.module.scss"
+import styles from "./login.module.scss"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as Yup from "yup"
