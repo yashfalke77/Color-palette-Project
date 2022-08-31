@@ -3,7 +3,7 @@ import { createSlice, createSelector } from "@reduxjs/toolkit";
 const slice = createSlice({
     name: "newPaletteColors",
     initialState: {
-        colors: ["purple", "#e15764"]
+        colors: [{name: "purple", hex: "#960bdb"}, {name: "different pink", hex: "#e15764"}]
     },
     reducers: {
         newColorAdded : (state, action) => {

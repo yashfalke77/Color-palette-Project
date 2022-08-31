@@ -11,6 +11,7 @@ import SavePalette from '@components/newPalette/SavePalette'
 const New = () => {
 
     const colors = useSelector((state: RootStateOrAny) => state.colors.colorsGenerate.colors)
+    console.log(colors)
 
     const [save, setSave] = useState(false)
 
@@ -28,8 +29,8 @@ const New = () => {
                     </div>
                     <div className={styles.new__body}>
                         <div style={{ flexWrap: `${colors.length > 5 ? "wrap" : "nowrap"}` }} className={styles.new__dragableColorBoxes}>
-                            {colors.map((c: string) => (
-                                <DraggableColorBox color={c} len={colors.length} />
+                            {colors.map((c: any) => (
+                                <DraggableColorBox name={c.name} hex={c.hex} len={colors.length} />
                             ))}
                         </div>
                     </div>
