@@ -181,8 +181,8 @@
 
         &heading {
             color: var(--color-black);
-            font-weight: 800;
-            font-size: 6rem;
+            font-weight: 900;
+            font-size: 5rem;
             text-align: center;
             line-height: 1;
             letter-spacing: -0.05em;
@@ -192,12 +192,12 @@
             color: var(--color-grey-dark);
             font-size: 1.8rem;
             text-align: center;
-            margin: 3rem 0rem;
+            margin: 1.6rem 0rem;
         }
 
         &Partition {
             display: flex;
-            margin-top: 4rem;
+            margin-top: 3rem;
         }
 
         &Left {
@@ -229,7 +229,7 @@
         &Info2 {
             padding: 1.7rem 0rem;
             font-weight: 700;
-            font-size: 3.1rem;
+            font-size: 2.6rem;
             line-height: 1.3em;
         }
 
@@ -237,238 +237,6 @@
             font-size: 16px;
             color: #7d7c83;
             line-height: 1.7em;
-        }
-    }
-}
-
-// ------------------------- our services --------------------------------------------------------
-@keyframes moveInTop {
-    0% {
-        opacity: 0;
-        transform: translateY(-10rem);
-    }
-
-    80% {
-        transform: translateY(0rem);
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-.product {
-    padding: 8rem 3rem;
-
-    @include respond(phone) {
-        padding: 2rem;
-    }
-
-    &__title {
-        max-width: 70rem;
-        margin: 0 auto;
-        margin-bottom: 4rem;
-        text-align: center;
-    }
-
-    &__headingPrimary {
-        color: var(--color-black);
-        font-weight: 800;
-        font-size: 7rem;
-        text-align: center;
-        line-height: 1;
-        letter-spacing: -0.05em;
-    }
-
-    &__description {
-        margin-top: 3rem;
-        font-size: 1.8rem;
-        color: var(--color-grey-dark);
-
-    }
-
-    &__body {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-
-        @include respond(phone) {
-            justify-content: space-around;
-        }
-    }
-
-    a {
-
-        &,
-        &:link,
-        &:visited {
-            text-decoration: none;
-            color: var(--color-black);
-        }
-    }
-
-    &__headingSecondary {
-        font-weight: 800;
-        font-size: 3.6rem;
-        line-height: 1;
-    }
-
-    &__headingTertiary {
-        font-weight: 800;
-        font-size: 2.6rem;
-        line-height: 1;
-    }
-
-    &__card {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        background-color: var(--color-grey-light-2);
-        border-radius: 14px;
-        width: 23rem;
-        height: 30rem;
-        cursor: pointer;
-        margin-right: 1.6rem;
-        margin-bottom: 3rem;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-        transition: all 0.2s ease-in;
-
-        @include respond(phone) {
-            width: 30rem;
-            margin-bottom: 4rem;
-        }
-
-        @include respond(tab-port) {
-            width: 28rem;
-            margin-bottom: 4rem;
-        }
-
-        @include respond(tab-land) {
-            width: 28rem;
-            margin-bottom: 4rem;
-        }
-
-        @include respond(big-desktop) {
-            width: 28rem;
-            margin-bottom: 4rem;
-        }
-
-        &Outer {
-            display: inline-block;
-            position: relative;
-            padding: 3rem;
-            width: 100%;
-        }
-
-        &Badge {
-            font-size: 1.4rem;
-            position: absolute;
-            font-weight: 700;
-            padding: 0 1rem;
-            top: 0;
-            right: 3rem;
-
-            &--1 {
-                color: #daab00;
-                background-color: #fdf3ce;
-            }
-
-            &--2 {
-                color: #802fde;
-                background-color: #e8e2f7;
-            }
-
-            &--3 {
-                background-color: #d5f8ef;
-                color: #14b789;
-            }
-
-            &--4 {
-                background-color: #ffe5f4;
-                color: #e71591;
-            }
-
-            &--5 {
-                background-color: #d8f6ff;
-                color: #00aee5;
-            }
-        }
-
-        &Inner {
-            display: none;
-            width: 0;
-            padding: 3rem;
-
-        }
-
-        &Icon {
-            height: 4.5rem;
-            width: 5.5rem;
-            fill: var(--color-black);
-            margin-bottom: 1.6rem;
-        }
-
-        &Description {
-            color: var(--color-grey-dark-2);
-            margin-top: 1.6rem;
-            font-size: 1.6rem;
-        }
-
-        &:hover &Inner {
-            display: inline-block;
-            width: 100%;
-            animation-name: moveInTop;
-            animation-duration: 0.5s;
-        }
-
-        &:hover &Outer {
-            display: none;
-            width: 0;
-        }
-
-        &--1:hover {
-            background-color: #fdf3ce;
-        }
-
-        &--2:hover {
-            background-color: #e8e2f7;
-        }
-
-        &--3:hover {
-            background-color: #d5f8ef;
-        }
-
-        &--4:hover {
-            background-color: #ffe5f4;
-        }
-
-        &--5:hover {
-            background-color: #d8f6ff;
-        }
-
-
-
-        &Hover {
-            &--1 {
-                color: #daab00;
-            }
-
-            &--2 {
-                color: #802fde;
-            }
-
-            &--3 {
-                color: #14b789;
-            }
-
-            &--4 {
-                color: #e71591;
-            }
-
-            &--5 {
-                color: #00aee5;
-            }
         }
     }
 }

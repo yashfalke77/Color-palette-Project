@@ -20,7 +20,7 @@ const New = () => {
     }
 
     return (
-        <div>
+        <div className={styles.paletteNew}>
             <Navbar />
             <div className={styles.new}>
                 <div className={styles.new__left}>
