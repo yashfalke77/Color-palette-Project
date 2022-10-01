@@ -8,11 +8,15 @@ const slice = createSlice({
     reducers: {
         newColorAdded : (state, action) => {
             state.colors.push(action.payload.currentColor)
-        }
+        },
+        colorRemoved: (state, action) => ({
+            ...state,
+            colors: state.colors.filter(color => color.name !== action.payload.colorToRemove)
+        })
     }
 })
 
 export default slice.reducer
 
-export const {newColorAdded} = slice.actions
+export const {newColorAdded, colorRemoved} = slice.actions
 

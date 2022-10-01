@@ -7,24 +7,23 @@ import "react-color-palette/lib/css/styles.css";
 import { useForm, SubmitHandler } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as Yup from "yup"
+import { useSelector, RootStateOrAny } from 'react-redux'
 
 interface NewPaletteForm {
     len: number,
 }
 
+interface SavePaletteSchema {
+    name: string
+}
+
 const NewPaletteForm = ({ len }: NewPaletteForm) => {
 
-
-
     const [currentColor, setCurrentColor] = useColor("hex", "#121212");
-
     const dispatch = useDispatch()
-
     let disableButton = len === 10 ? true : false
-
-    interface SavePaletteSchema {
-        name: string
-    }
+    const colors = useSelector((state: RootStateOrAny) => state.colors.colorsGenerate.colors)
+    const [uniqueName, setUniqueName] = useState(false)
 
     const savePaletteSchema: Yup.SchemaOf<SavePaletteSchema> = Yup.object().shape({
         name: Yup.string().required().max(20),
@@ -35,7 +34,18 @@ const NewPaletteForm = ({ len }: NewPaletteForm) => {
     })
 
     const submitForm: SubmitHandler<SavePaletteSchema> = (data) => {
-        console.log(data)
+        setUniqueName(false)
+        let flag = false
+        for (const arr of colors) {
+            if (data.name === arr.name) {
+                flag = true
+                break
+            }
+        }
+        if (flag) {
+            setUniqueName(true)
+            return
+        }
         dispatch(newColorAdded({ currentColor: { name: data.name, hex: currentColor.hex } }))
     }
 
@@ -47,6 +57,7 @@ const NewPaletteForm = ({ len }: NewPaletteForm) => {
                 <div className={styles.paletteForm__name}>
                     <input type="text" {...register("name")} placeholder='Palette Name' className={styles.paletteForm__input} />
                     <p className={styles.paletteForm__errors}>{errors.name?.message}</p>
+                    {uniqueName && <p className={styles.paletteForm__errors}>name Should be unique</p>}
                 </div>
                 <div className={styles.paletteForm__divider}></div>
 

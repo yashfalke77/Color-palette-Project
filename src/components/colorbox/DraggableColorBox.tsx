@@ -1,4 +1,6 @@
+import { colorRemoved } from '@redux/slices/colorsGenerate'
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import styles from "./draggableColorbox.module.scss"
 
 interface DraggableColorBoxProps {
@@ -9,8 +11,9 @@ interface DraggableColorBoxProps {
 
 const DraggableColorBox = ({ name, hex, len }: DraggableColorBoxProps) => {
 
+    const dispatch = useDispatch()
     const deleteColor = () => {
-        console.log("Delete")
+        dispatch(colorRemoved({ colorToRemove: name }))
     }
 
     return (

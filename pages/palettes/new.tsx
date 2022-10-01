@@ -11,7 +11,6 @@ import SavePalette from '@components/newPalette/SavePalette'
 const New = () => {
 
     const colors = useSelector((state: RootStateOrAny) => state.colors.colorsGenerate.colors)
-    console.log(colors)
 
     const [save, setSave] = useState(false)
 
