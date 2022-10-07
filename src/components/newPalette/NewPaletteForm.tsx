@@ -55,7 +55,7 @@ const NewPaletteForm = ({ len }: NewPaletteForm) => {
             <ColorPicker width={450} height={250} hideHSV color={currentColor} alpha onChange={setCurrentColor} />
             <form onSubmit={handleSubmit(submitForm)}>
                 <div className={styles.paletteForm__name}>
-                    <input type="text" {...register("name")} placeholder='Palette Name' className={styles.paletteForm__input} />
+                    <input type="text" {...register("name")} placeholder='Color Name' className={styles.paletteForm__input} />
                     <p className={styles.paletteForm__errors}>{errors.name?.message}</p>
                     {uniqueName && <p className={styles.paletteForm__errors}>name Should be unique</p>}
                 </div>

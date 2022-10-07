@@ -5,16 +5,12 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { toast } from "react-toastify";
 import CheckCirlce from "@public/icons/check_circle.svg"
 import * as Yup from "yup"
-
 interface SavePaletteProps {
     setSave: Dispatch<SetStateAction<boolean>>
 }
 
 
 const SavePalette = ({ setSave }: SavePaletteProps) => {
-
-
-
     interface SavePaletteSchema {
         name: string
     }
